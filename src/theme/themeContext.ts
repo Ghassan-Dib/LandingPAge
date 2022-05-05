@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext } from 'react';
 
 type ThemeContent = {
   theme: string;
@@ -6,10 +6,10 @@ type ThemeContent = {
 };
 
 export const ThemeContext = createContext<ThemeContent>({
-  theme: "light",
+  theme: 'light',
   themeToggler: () => {
     return;
-  },
+  }
 });
 
 export const useGlobalThemeContext = () => useContext(ThemeContext);
