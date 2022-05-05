@@ -8,6 +8,7 @@
         "plugin:react/recommended",
         "plugin:prettier/recommended",
         "plugin:@typescript-eslint/recommended",
+        "stylelint-config-standard-scss",
         "prettier"
     ],
     "parser": "@typescript-eslint/parser",
@@ -16,7 +17,9 @@
             "jsx": true
         },
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "tsconfigRootDir": "__dirname",
+        "project": "['./tsconfig.json']"
     },
     "plugins": [
         "react",

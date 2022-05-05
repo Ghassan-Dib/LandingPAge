@@ -3,15 +3,15 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
-  padding: 10rem 0rem 0rem 0rem;
+  padding: 10rem 0rem 0rem;
   width: 100%;
   &__text {
     display: flex;
     flex-direction: column;
-    text-align: center; 
+    text-align: center;
     align-items: center;
     h4 {
-      margin: 2rem 2rem;
+      margin: 2rem;
     }
     .desk {
       display: none;
@@ -21,12 +21,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     &__media {
       width: fit-content;
       margin: 3rem 0;
-      .icon{
-        color: #2091F9;
+      .icon {
+        color: #2091f9;
         margin: 0 1.5rem 0 0;
       }
       .dark {
@@ -38,7 +38,7 @@
       display: flex;
       flex-direction: column;
       width: 90%;
-      margin: 0 0 5rem 0;
+      margin: 0 0 5rem;
       .item {
         display: flex;
         flex-direction: row;
@@ -65,13 +65,13 @@
         }
       }
     }
-    &__form { 
+    &__form {
       display: flex;
       flex-direction: column;
       padding: 1rem 2rem;
-      border: 1px solid #DDDDDD;
+      border: 1px solid #dddddd;
       box-sizing: border-box;
-      box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+      box-shadow: 0px 13px 19px rgba(0, 0, 0, 7%);
       border-radius: 20px;
       width: 90%;
       h3 {
@@ -86,14 +86,14 @@
       }
       #message {
         @include inputBox();
-        padding: 1rem 1rem;
+        padding: 1rem;
         height: 12rem;
         border-radius: 0;
         resize: none;
       }
       button {
         margin: 3rem 0;
-        @include btn(#2091F9, $light, 145px);
+        @include btn(#2091f9, $light, 145px);
       }
     }
     &__map {
@@ -117,17 +117,17 @@
       display: grid;
       grid-template-columns: repeat(16, 1fr);
       grid-template-columns: repeat(3, 1fr);
-      &__form{
+      &__form {
         grid-column: 1/6;
         grid-row: 1/4;
       }
-      &__items{
+      &__items {
         width: fit-content;
         grid-column: 10/17;
         grid-row: 1/2;
         display: flex;
         flex-direction: row;
-        
+
         .item {
           padding-top: 2.5rem;
           width: fit-content;
@@ -153,7 +153,7 @@
             max-width: 300px;
             text-align: center;
             padding-top: 1rem;
-          }     
+          }
         }
       }
       &__map {
@@ -162,7 +162,7 @@
         grid-column: 8/17;
         grid-row: 2/3;
       }
-      &__media{
+      &__media {
         grid-column: 9/16;
         grid-row: 3/4;
         padding-left: 1rem;

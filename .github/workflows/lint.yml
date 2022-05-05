@@ -27,7 +27,5 @@ jobs:
 
       - name: Run linters
         uses: github/super-linter@v4
-        with:
-          eslint: true
-          prettier: true
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
