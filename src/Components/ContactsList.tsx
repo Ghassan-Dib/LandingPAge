@@ -14,10 +14,10 @@ interface ContactData {
 }
 
 const ContactsList = () => {
-  // const { data } = useQuery<ContactData, Contact>(CONTACTS_QUERY);
+  const { data } = useQuery<ContactData, Contact>(CONTACTS_QUERY);
   return (
     <div className="contacts-list">
-      {/* {data && (
+      {data && (
         <>
           {data.contacts.map((contact: Contact) => (
             <ContactCard
@@ -28,7 +28,7 @@ const ContactsList = () => {
             />
           ))}
         </>
-      )} */}
+      )}
     </div>
   );
 };
