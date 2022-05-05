@@ -1,12 +1,12 @@
-import React from "react";
-import phone from "../images/phone.png";
-import location from "../images/location.png";
-import ContactItem from "./ContactItem";
-import { IoLogoFacebook } from "react-icons/io";
-import { IoLogoLinkedin } from "react-icons/io";
-import { IoLogoTwitter } from "react-icons/io";
-import { Link } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import phone from '../images/phone.png';
+import location from '../images/location.png';
+import ContactItem from './ContactItem';
+import { IoLogoFacebook } from 'react-icons/io';
+import { IoLogoLinkedin } from 'react-icons/io';
+import { IoLogoTwitter } from 'react-icons/io';
+import { Link } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 interface FooterInfo {
   data: { title: string; list: string[] }[];
@@ -27,7 +27,7 @@ const Footer: React.FC<FooterInfo> = ({ data: footerLists }) => {
                 </ul>
               </div>
             ))
-          : "Loading..."}
+          : 'Loading...'}
       </div>
       <div className="footer__contacts">
         <ContactItem img={location} text="7480 Mockingbird Hill undefined" />

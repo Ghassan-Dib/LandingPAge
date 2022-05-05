@@ -1,5 +1,5 @@
-import React from "react";
-import PricingItem from "./PricingItem";
+import React from 'react';
+import PricingItem from './PricingItem';
 
 interface PricingInfo {
   data: { title: string; text: string; text2: string; features: string[] };
@@ -14,9 +14,9 @@ const Pricing: React.FC<PricingInfo> = ({ data: { title, text, text2, features }
         <h4 className="desk">{text2}</h4>
       </div>
       <div className="pricing__items">
-        <PricingItem title={"FREE"} price={"0"} list={features} />
-        <PricingItem title={"STANDARD"} price={"10"} list={features} />
-        <PricingItem title={"BUSINESS"} price={"99"} list={features} />
+        <PricingItem title={'FREE'} price={'0'} list={features} />
+        <PricingItem title={'STANDARD'} price={'10'} list={features} />
+        <PricingItem title={'BUSINESS'} price={'99'} list={features} />
       </div>
     </div>
   );

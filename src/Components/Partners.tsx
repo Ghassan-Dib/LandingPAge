@@ -1,6 +1,6 @@
-import React from "react";
-import { useGlobalThemeContext } from ".././theme/themeContext";
-import PartnersItem from "./PartnersItem";
+import React from 'react';
+import { useGlobalThemeContext } from '.././theme/themeContext';
+import PartnersItem from './PartnersItem';
 
 interface PartnersInfo {
   data: { title: string; text: string; images: string[] };
@@ -8,7 +8,7 @@ interface PartnersInfo {
 
 const Partners: React.FC<PartnersInfo> = ({ data: { title, text, images } }) => {
   const { theme } = useGlobalThemeContext();
-  const themeClass = theme === "dark" ? "is-dark" : "";
+  const themeClass = theme === 'dark' ? 'is-dark' : '';
   return (
     <div className={`content-partner ${themeClass}`}>
       <div className="content-partner__text">
@@ -19,7 +19,7 @@ const Partners: React.FC<PartnersInfo> = ({ data: { title, text, images } }) => 
         <div className="row">
           {images
             ? images.map((image, index) => <PartnersItem key={index} img={image} />)
-            : "loading.."}
+            : 'loading..'}
         </div>
       </div>
       <div className="content-partner__action">

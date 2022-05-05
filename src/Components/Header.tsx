@@ -1,7 +1,7 @@
-import React from "react";
-import { useGlobalThemeContext } from ".././theme/themeContext";
-import Navbar from "./Navbar";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { useGlobalThemeContext } from '.././theme/themeContext';
+import Navbar from './Navbar';
+import { BrowserRouter } from 'react-router-dom';
 
 interface HeaderInfo {
   data: { img: string; text: string; text2: string; title: string };
@@ -9,7 +9,7 @@ interface HeaderInfo {
 
 const Header: React.FC<HeaderInfo> = ({ data: { img, text, text2, title } }) => {
   const { theme } = useGlobalThemeContext();
-  const themeClass = theme === "dark" ? "is-dark" : "";
+  const themeClass = theme === 'dark' ? 'is-dark' : '';
   return (
     <div className={`container ${themeClass}`}>
       <div className="header">

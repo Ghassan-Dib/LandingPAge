@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface ItemInfo {
   img: string;
@@ -9,7 +9,7 @@ interface ItemInfo {
 const Item: React.FC<ItemInfo> = ({ img, title, text }) => {
   return (
     <div className="features__items__box">
-      <img src={require("../images/" + img)} alt="icon" />
+      <img src={require('../images/' + img)} alt="icon" />
       <h3>{title}</h3>
       <p>{text}</p>
     </div>

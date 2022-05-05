@@ -1,7 +1,7 @@
-import React from "react";
-import { useGlobalThemeContext } from ".././theme/themeContext";
-import Item from "./Item";
-import VideoEmbed from "./VideoEmbed";
+import React from 'react';
+import { useGlobalThemeContext } from '.././theme/themeContext';
+import Item from './Item';
+import VideoEmbed from './VideoEmbed';
 
 interface FeaturesInfo {
   data: {
@@ -14,7 +14,7 @@ interface FeaturesInfo {
 
 const Features: React.FC<FeaturesInfo> = ({ data: { list, text, text2, title } }) => {
   const { theme } = useGlobalThemeContext();
-  const themeClass = theme === "dark" ? "is-dark" : "";
+  const themeClass = theme === 'dark' ? 'is-dark' : '';
   return (
     <div className={`features ${themeClass}`}>
       <div className="features__text-content">
@@ -25,7 +25,7 @@ const Features: React.FC<FeaturesInfo> = ({ data: { list, text, text2, title } }
       <div className="features__items dark">
         {list
           ? list.map((d, i) => <Item key={i} img={d.img} title={d.title} text={d.text} />)
-          : "loading.."}
+          : 'loading..'}
       </div>
       <div className="features__screen-content">
         <VideoEmbed />

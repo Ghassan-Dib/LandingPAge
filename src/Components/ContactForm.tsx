@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { CREATE_CONTACT_MUTATION } from "../resolvers/Mutation";
-import { CONTACTS_QUERY } from "../resolvers/Query";
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { CREATE_CONTACT_MUTATION } from '../resolvers/Mutation';
+import { CONTACTS_QUERY } from '../resolvers/Query';
 
 interface ContactDetails {
   name: string;
@@ -11,9 +11,9 @@ interface ContactDetails {
 
 const ContactForm = () => {
   const [contact, setContact] = useState<ContactDetails>({
-    name: "",
-    email: "",
-    message: ""
+    name: '',
+    email: '',
+    message: ''
   });
   const [createContact] = useMutation<{ createContact: ContactDetails }>(CREATE_CONTACT_MUTATION, {
     variables: {
@@ -26,7 +26,7 @@ const ContactForm = () => {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     createContact();
-    setContact({ name: "", email: "", message: "" });
+    setContact({ name: '', email: '', message: '' });
   };
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     setContact({ ...contact, [event.target.name]: event.target.value });
