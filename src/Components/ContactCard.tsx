@@ -1,7 +1,7 @@
-import React from 'react';
-import { useMutation } from '@apollo/client';
-import { DELETE_CONTACT_MUTATION } from '../resolvers/Mutation';
-import { CONTACTS_QUERY } from '../resolvers/Query';
+import React from "react";
+import { useMutation } from "@apollo/client";
+import { DELETE_CONTACT_MUTATION } from "../resolvers/Mutation";
+import { CONTACTS_QUERY } from "../resolvers/Query";
 
 interface ContactInfo {
   name: string;

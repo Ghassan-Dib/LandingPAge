@@ -1,5 +1,5 @@
-import React from 'react';
-import { useGlobalThemeContext } from '.././theme/themeContext';
+import React from "react";
+import { useGlobalThemeContext } from ".././theme/themeContext";
 
 interface HLInfo {
   data: { img: string; text: string; text2: string; title: string };
@@ -7,12 +7,12 @@ interface HLInfo {
 
 const HeroLight: React.FC<HLInfo> = ({ data: { img, text, text2, title } }) => {
   const { theme } = useGlobalThemeContext();
-  const themeClass = theme === 'dark' ? 'is-dark' : '';
+  const themeClass = theme === "dark" ? "is-dark" : "";
   return (
     <div className={`light ${themeClass}`}>
       <div className="light__content">
         <div className="frame-18">
-          <img src={require('../images/' + img)} alt="macbook" />
+          <img src={require("../images/" + img)} alt="macbook" />
         </div>
         <div className="frame-19">
           <div className="text-content">

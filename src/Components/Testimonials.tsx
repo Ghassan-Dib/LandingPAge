@@ -1,6 +1,6 @@
-import React from 'react';
-import { useGlobalThemeContext } from '.././theme/themeContext';
-import client from '../images/client.png';
+import React from "react";
+import { useGlobalThemeContext } from ".././theme/themeContext";
+import client from "../images/client.png";
 
 interface TestimonialsInfo {
   data: { title: string; img: string; text: string; text2: string; text3: string };
@@ -8,14 +8,14 @@ interface TestimonialsInfo {
 
 const Testimonials: React.FC<TestimonialsInfo> = ({ data: { title, img, text, text2, text3 } }) => {
   const { theme } = useGlobalThemeContext();
-  const themeClass = theme === 'dark' ? 'is-dark' : '';
+  const themeClass = theme === "dark" ? "is-dark" : "";
   return (
     <div className={`content-testimonials ${themeClass}`}>
       <div className="content-testimonials__text">
         <h2>{title}</h2>
       </div>
       <div className="content-testimonials__items">
-        <img className="brand" src={require('../images/' + img)} alt="client" />
+        <img className="brand" src={require("../images/" + img)} alt="client" />
         <h4>{text}</h4>
         <div className="client">
           <img src={client} alt="ibm" />

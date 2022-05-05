@@ -1,7 +1,7 @@
-import React from 'react';
-import ContactCard from './ContactCard';
-import { useQuery } from '@apollo/client';
-import { CONTACTS_QUERY } from '../resolvers/Query';
+import React from "react";
+import ContactCard from "./ContactCard";
+import { useQuery } from "@apollo/client";
+import { CONTACTS_QUERY } from "../resolvers/Query";
 
 interface Contact {
   name: string;

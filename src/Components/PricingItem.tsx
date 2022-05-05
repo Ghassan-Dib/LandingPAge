@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface PricingItemInfo {
   title: string;
@@ -20,7 +20,7 @@ const PricingItem: React.FC<PricingItemInfo> = ({ title, price, list }) => {
           <h6>Per Month</h6>
         </div>
       </div>
-      <ul>{list ? list.map((d, i) => <li key={i}>{d}</li>) : 'loading..'}</ul>
+      <ul>{list ? list.map((d, i) => <li key={i}>{d}</li>) : "loading.."}</ul>
       <button>Order Now</button>
     </div>
   );
