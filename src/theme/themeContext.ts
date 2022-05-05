@@ -8,7 +8,7 @@ type ThemeContent = {
 export const ThemeContext = createContext<ThemeContent>({
   theme: 'light',
   themeToggler: () => {
-    return;
+    null;
   }
 });
 
