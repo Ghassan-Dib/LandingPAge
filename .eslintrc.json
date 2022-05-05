@@ -25,6 +25,7 @@
         "react",
         "@typescript-eslint"
     ],
+    "customSyntax": "postcss-less",
     "rules": {
       "semi":2
     }
