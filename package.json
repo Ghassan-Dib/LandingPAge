@@ -31,7 +31,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "npx eslint src test",
+    "lint": "npx eslint src test ",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --custom-syntax postcss-less",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "npx prettier src test --check",
     "prettier:fix": "npm run prettier -- --write",
@@ -65,6 +66,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
+    "postcss-less": "^6.0.0",
     "prettier": "^2.6.2",
     "sass": "^1.49.0"
   }
