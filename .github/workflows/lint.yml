@@ -20,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 17
+          node-version: 17.2.0
 
       - name: Install Node.js dependencies
         run: npm ci
@@ -30,3 +30,4 @@ jobs:
         with:
           eslint: true
           prettier: true
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
