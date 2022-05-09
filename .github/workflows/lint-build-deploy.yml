@@ -33,7 +33,7 @@ jobs:
           VALIDATA_ALL_CODEBASE: false
 
   build:
-    needs: run-linters
+    # needs: run-linters
     name: Build app
     runs-on: ubuntu-latest
     steps:
@@ -58,6 +58,10 @@ jobs:
       name: deployment
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v1
+          with:
+            node-version: 12
+      - run: npm ci
       - run: npm run build
       - uses: aws-actions/configure-aws-credentials@v1
         with:
