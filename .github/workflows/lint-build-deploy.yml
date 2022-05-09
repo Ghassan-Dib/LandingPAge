@@ -1,4 +1,4 @@
-name: Deploy
+name: Lint
 
 on:
   push:
@@ -9,10 +9,33 @@ on:
       - '*'
 
 jobs:
-  build:
-    name: Build app
+  run-linters:
+    name: Run linters
     runs-on: ubuntu-latest
 
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 17.2.0
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Run linters
+        uses: github/super-linter@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISABLE_ERRORS: true
+          VALIDATA_ALL_CODEBASE: false
+
+  build:
+    needs: run-linters
+    name: Build app
+    runs-on: ubuntu-latest
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
@@ -28,6 +51,13 @@ jobs:
       - name: Build app
         run: npm run build
 
+  deploy:
+    needs: build
+    name: Deploy to aws S3
+    environment:
+      name: deployment
+    runs-on: ubuntu-latest
+    steps:
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
