@@ -31,9 +31,15 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "lint": "npx eslint src test stylelint *.scss",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --custom-syntax postcss-less",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src test --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json,sql}' --config ./.prettierrc"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-recommended-scss"
   },
   "eslintConfig": {
     "extends": [
@@ -55,15 +61,18 @@
   },
   "devDependencies": {
     "@types/react-beautiful-dnd": "^13.1.2",
-    "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "@typescript-eslint/parser": "^5.20.0",
-    "eslint": "^8.13.0",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
+    "postcss-less": "^6.0.0",
     "prettier": "^2.6.2",
-    "sass": "^1.49.0"
+    "sass": "^1.49.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "sugarss": "^4.0.1"
   }
 }
