@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-landinpage-dev-92912-authRole",
+      "UnauthRoleArn": "arn:aws:iam::403077757606:role/amplify-landinpage-dev-92912-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::403077757606:role/amplify-landinpage-dev-92912-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-landinpage-dev-92912-deployment",
+      "UnauthRoleName": "amplify-landinpage-dev-92912-unauthRole",
+      "StackName": "amplify-landinpage-dev-92912",
+      "StackId": "arn:aws:cloudformation:us-east-1:403077757606:stack/amplify-landinpage-dev-92912/d95e3750-d1bc-11ec-9258-0a324a675b51",
+      "AmplifyAppId": "du288cwrof2sg"
+    },
+    "categories": {
+      "auth": {
+        "landinpage63cc8ce0": {}
+      }
+    }
+  }
+}

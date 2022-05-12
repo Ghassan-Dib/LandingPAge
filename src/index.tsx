@@ -8,6 +8,9 @@ import {
   createHttpLink,
   NormalizedCacheObject
 } from '@apollo/client';
+import Amplify from 'aws-amplify';
+import config from './aws-exports';
+Amplify.configure(config);
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:4000'

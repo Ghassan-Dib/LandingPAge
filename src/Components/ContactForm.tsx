@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { CREATE_CONTACT_MUTATION } from '../resolvers/Mutation';
-import { CONTACTS_QUERY } from '../resolvers/Query';
+import { API } from 'aws-amplify';
+import { contacts } from '../graphql/queries';
+import {
+  createContact as createContactMutation,
+  deleteContact as deleteContactMutation
+} from '../graphql/mutations';
 
 interface ContactDetails {
   name: string;
@@ -15,14 +19,24 @@ const ContactForm = () => {
     email: '',
     message: ''
   });
-  const [createContact] = useMutation<{ createContact: ContactDetails }>(CREATE_CONTACT_MUTATION, {
-    variables: {
-      name: contact.name,
-      email: contact.email,
-      message: contact.message
-    },
-    refetchQueries: [CONTACTS_QUERY]
-  });
+  const createContact = async () => {
+    await API.graphql({
+      query: createContactMutation,
+      variables: {
+        name: contact.name,
+        email: contact.email,
+        message: contact.message
+      }
+    });
+  };
+  // const [createContact] = useMutation<{ createContact: ContactDetails }>(createContactMutation, {
+  //   variables: {
+  //     name: contact.name,
+  //     email: contact.email,
+  //     message: contact.message
+  //   },
+  //   refetchQueries: [contacts]
+  // });
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     createContact();

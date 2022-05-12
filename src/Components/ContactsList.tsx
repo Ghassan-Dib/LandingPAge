@@ -2,6 +2,7 @@ import React from 'react';
 import ContactCard from './ContactCard';
 import { useQuery } from '@apollo/client';
 import { CONTACTS_QUERY } from '../resolvers/Query';
+import { contacts } from '../graphql/queries';
 
 interface Contact {
   name: string;
@@ -14,7 +15,7 @@ interface ContactData {
 }
 
 const ContactsList = () => {
-  const { data } = useQuery<ContactData, Contact>(CONTACTS_QUERY);
+  const { data } = useQuery<ContactData, Contact>(contacts);
   return (
     <div className="contacts-list">
       {data && (
