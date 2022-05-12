@@ -12,22 +12,26 @@ import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 import { ThemeProvider } from './Components/ThemeProvider';
 import data from './data/data.json';
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <ThemeProvider>
-        <Header data={data.Header} />
-        <Features data={data.Features} />
-        <HeroLight data={data.HeroLight} />
-        <LightCTA data={data.LightCTA} />
-        <Partners data={data.Partners} />
-        <Testimonials data={data.Testimonials} />
-        <Pricing data={data.Pricing} />
-        <Contact data={data.Contact} />
-        <Footer data={data.Footer} />
-      </ThemeProvider>
-    </div>
+    <Authenticator>
+      <div className="App">
+        <ThemeProvider>
+          <Header data={data.Header} />
+          <Features data={data.Features} />
+          <HeroLight data={data.HeroLight} />
+          <LightCTA data={data.LightCTA} />
+          <Partners data={data.Partners} />
+          <Testimonials data={data.Testimonials} />
+          <Pricing data={data.Pricing} />
+          <Contact data={data.Contact} />
+          <Footer data={data.Footer} />
+        </ThemeProvider>
+      </div>
+    </Authenticator>
   );
 };
 
